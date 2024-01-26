@@ -1,0 +1,27 @@
+.cain1{
+    /* background-color: rgb(185, 185, 183); */
+    
+    width: 530px;
+    height: 800px;
+   
+    
+}
+body{
+    background-image: url(./bg-1.jpg);
+    -webkit-background-size: cover;
+
+    -moz-background-size: cover;
+  
+    -o-background-size: cover;
+  
+    background-size: cover;
+    overflow-y: hidden;
+}
+.login-form{
+   
+
+        border: 1px solid #6a6c6e;
+    
+        background: rgba(213, 215, 222, 0.5);
+    
+    }

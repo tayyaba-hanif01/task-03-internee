@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+
+
+
+<body>
+    <div class="container justify-content-center cain1 py-5">
+        <div class="row justify-content-center my-3">
+            <div class="col-md-12 ">
+                <form action="" class="login-form" id="myForm" novalidate>
+                    <div class="row -5 mx-5 justify-content-center">
+                        <h1 class="text-dark text-center"><b>Contact Form</b></h1>  
+                        <hr>
+                        <!-- user name -->
+                        <div class="col-md-9 mt-3">
+                            <label for="fn">First Name</label>
+                            <input type="text" name="" id="uname" class="form-control mt-2" placeholder="First Name">  
+                            <label for="" id="lb1"></label>
+                        </div>
+
+                        <div class="col-md-9 mt-3">
+                            <label for="fn">Last Name</label>
+                            <input type="text" name="" id="lname" class="form-control mt-2" placeholder="last Name">  
+                            <label for="" id="lb4"></label>
+                        </div>
+                        
+                         <!-- email -->
+                        <div class="col-md-9 mt-3">
+                            <label for="email">Email</label>
+                            <input type="email" name="" id="email" class="form-control mt-2" placeholder="Email" >
+                            <label for="" id="lb2"></label>            
+                        </div>
+                       <!-- password -->
+                        <div class="col-md-9 mt-3">
+                            <label for="pwd">Phone No</label>
+                            <input type="text" name="" id="pwd" class="form-control mt-2" placeholder="Phone No" >     
+                            <label for="" id="lb3"></label>                    
+                        </div>
+
+
+                        <div class="col-md-9  mt-3">
+                            <input type="button" value="submit" class="btn btn-info my-1"   onclick="validate()">     
+                                                 
+                                                 
+                        </div>
+                    </div>
+
+
+
+                </form>
+                
+                
+            </div>
+        </div>
+ 
+
+    </div>
+
+    <script>
+        function validate(){
+            var name=document.getElementById("uname").value;
+            var email=document.getElementById("email").value;
+            var pass=document.getElementById("pwd").value;
+            var lastname=document.getElementById("lname").value;
+       
+        // name
+        if(lastname.length == 0)
+        {
+            document.getElementById("lb4").innerHTML="Please Enter Your last Name";
+            document.getElementById("lb4").style.color="red";
+            document.getElementById("lname").style.borderColor="red";
+        }
+        else{
+            document.getElementById("lb4").innerHTML="";
+            document.getElementById("lname").style.borderColor="green"
+        } 
+
+        if(name.length == 0)
+        {
+            document.getElementById("lb1").innerHTML="Please Enter Your first Name";
+            document.getElementById("lb1").style.color="red";
+            document.getElementById("uname").style.borderColor="red";
+        }
+        else{
+            document.getElementById("lb1").innerHTML="";
+            document.getElementById("uname").style.borderColor="green"
+        } 
+        // email\
+         var ptr=/\w+@[a-z A-z]+\.[a-z A-Z]{2,3}$/g
+        if(email.length == 0)
+        {
+            document.getElementById("lb2").innerHTML="Please Enter Your Email";
+            document.getElementById("lb2").style.color="red";
+            document.getElementById("email").style.borderColor="red";
+        }
+        else if(ptr.test(email) == false)
+        {
+            document.getElementById("lb2").innerHTML="Please Enter Your valid Email";
+            document.getElementById("lb2").style.color="red";
+            document.getElementById("email").style.borderColor="red";
+        }
+        else{
+            document.getElementById("lb2").innerHTML="";
+            document.getElementById("email").style.borderColor="green"
+        } 
+
+     
+        if(pass.length == 0)
+        {
+            document.getElementById("lb3").innerHTML="Please Enter Your Phone No";
+            document.getElementById("lb3").style.color="red";
+            document.getElementById("pwd").style.borderColor="red";
+        }
+        else{
+            document.getElementById("lb3").innerHTML="";
+            document.getElementById("pwd").style.borderColor="green"
+        } 
+
+        if(lastname.length != 0 && name.length != 0 && ptr.test(email).length != 0 && pass.length != 0)
+        {
+
+            
+            document.getElementById("uname").value="";
+            document.getElementById("email").value="";
+            document.getElementById("lname").value="";
+            document.getElementById("pwd").value="";
+
+             alert("Form Has been submitted");
+        }
+        
+    }
+
+    
+   
+    
+    
+  
+    </script>
+</body>
+</html>
